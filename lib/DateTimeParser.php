@@ -179,7 +179,7 @@ class DateTimeParser {
      * @return DateTime|DateInterval
      */
     static public function parse($date, $referenceTz = null) {
-
+	$date = strval($date);
         if ($date[0]==='P' || ($date[0]==='-' && $date[1]==='P')) {
             return self::parseDuration($date);
         } elseif (strlen($date)===8) {
